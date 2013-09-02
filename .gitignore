@@ -22,3 +22,6 @@ tabler.tab.*
 
 # Temp. files.
 *~
+
+# The tabler executable.
+tabler

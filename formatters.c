@@ -21,7 +21,7 @@ void print_header_tabular(variable *vars, int n_variables) {
         vars = vars->next;
     }
 
-    printf("Value\n\\hline\n");
+    printf("V\\\\\n\\hline\n");
 }
 
 void print_row_tabular(variable *vars, int n_variables, bool value) {
@@ -38,7 +38,7 @@ void print_row_tabular(variable *vars, int n_variables, bool value) {
 
     printf("%d", value);
     
-    for (int j = 0; j < strlen("Value") - 1; j++) {
+    for (int j = 0; j < strlen("V") - 1; j++) {
         printf(" ");
     }
 
@@ -58,7 +58,7 @@ void print_header_terminal(variable *vars, int n_variables) {
         total_length += (strlen(__vars->name) + 3);
         __vars = __vars->next;
     }
-    total_length += strlen("Value");
+    total_length += strlen("V");
 
     printf("    ");
     for (int i = 0; i < total_length; i++) {
@@ -72,7 +72,7 @@ void print_header_terminal(variable *vars, int n_variables) {
         vars = vars->next;
     }
 
-    printf("Value\n");
+    printf("V\n");
 
     printf("    ");
     for (int i = 0; i < total_length; i++) {
@@ -97,7 +97,7 @@ void print_row_terminal(variable *vars, int n_variables, bool value) {
 
     printf("%d", value);
     
-    for (int j = 0; j < strlen("Value") - 1; j++) {
+    for (int j = 0; j < strlen("V") - 1; j++) {
         printf(" ");
     }
 

@@ -80,9 +80,20 @@ line                    : expression EOE            {   print_header = print_hea
                                                         print_row = print_row_tabular;
                                                         print_footer = print_footer_tabular;
 
+                                                        text_color(BOLD, WHITE);
+                                                        printf("\nTruth table:\n\n");
+                                                        reset_colors();
+
                                                         print_table($2);
+
+                                                        text_color(BOLD, WHITE);
+                                                        printf("\nTree:\n\n");
+                                                        reset_colors();
                                                         
                                                         print_tree($2);
+ 
+                                                        print_satisfiability($2);
+
                                                         destroy_tree($2);
                                                         clear();
                                                     }
